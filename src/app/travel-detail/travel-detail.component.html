@@ -1,0 +1,35 @@
+<div class="container d-flex mt-5 mb-5">
+  <div class="w-50">
+    <img class="card-img-bottom" src="{{trip.img}}" alt="Card image cap">
+  </div>
+  <div class="w-50 p-3 bg-light text-dark d-flex flex-column justify-content-between">
+    <div>
+      <div>
+        <h3 class="mb-3">{{trip.destination}}</h3>
+      </div>
+      <div>
+        <h5 class="font-weight-bold shortDesc text-secondary">{{trip.shortDesc}}</h5>
+      </div>
+      <div>
+        <span class="font-weight-bold mr-2">Price:</span>
+        {{trip.price}}
+      </div>
+      <div>
+        <span class="font-weight-bold mr-2">Date: </span>
+        {{trip.startdate}}
+      </div>
+      <div>
+        <span class="font-weight-bold mr-2">Duration: </span>
+        {{trip.duration}}
+      </div>
+      <div class="mt-3">
+        {{trip.desc}}
+      </div>
+    </div>
+    <div>
+      <a routerLink="/travels" class="text-dark float-right">Back</a>
+      <br>
+      <a (click)="addToCart()" class="addToCart text-dark float-right">Add To Cart<img class="addCartLogo" src="/assets/img/addCartLogo.png" alt=""></a>
+    </div>
+  </div>
+</div>

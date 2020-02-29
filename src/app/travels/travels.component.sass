@@ -1,0 +1,45 @@
+.divTripItem
+  text-align: left !important
+  padding-left: 0px !important
+  padding-right: 0px !important
+  display: flex !important
+  flex-direction: column !important
+  justify-content: space-between !important
+  @media screen and (min-width: 700px)
+    max-width: 28% !important
+    max-height: 400px !important
+.divTripImg
+  position: relative
+  bottom: 0 !important
+.tripImg
+  display: block
+  width: 100%
+  height: auto
+.tripDetail
+  color: white
+  font-size: calc(100vw / 80)
+  position: absolute
+  top: 50%
+  left: 50%
+  -webkit-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%)
+  text-align: left !important
+  position: absolute
+  height: 100%
+  width: 100%
+  opacity: 0
+  transition: 0.5s ease
+.tripDetail:hover
+  opacity: 1
+.shortDesc
+  font-family: 'Playfair Display SC',
+.addCartLogo
+  width: 30px
+  height: 30px
+.addToCart
+  cursor: pointer
+.addPlusLogo
+  width: 30px
+  height: 30px
+  cursor: pointer

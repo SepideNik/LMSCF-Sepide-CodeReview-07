@@ -1,0 +1,64 @@
+<ng-template [ngIf]="isTravelNull" [ngIfElse]="emptyResult">
+  <div class="mt-5 container w-100">
+    <!-- header-->
+    <div class="d-flex mt-5">
+      <div class="w-25">
+      </div>
+      <div class="w-50">
+      </div>
+      <div class="w-25">
+        <div class="col-6 align-self-center">
+          <div class="text-center font-weight-bold text-info">
+            Price
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <!-- Trips in cart-->
+    <div class="d-flex mt-5 mb-5" *ngFor="let trip of travels; index as id">
+      <div class="w-25">
+        <img class="card-img-bottom" src="{{trip.img}}" alt="Card image cap">
+      </div>
+      <div class="w-50 p-3 bg-light text-dark d-flex flex-column justify-content-between">
+        <div>
+          <h3 class="mb-3">{{trip.destination}}</h3>
+        </div>
+        <div>
+          <h5 class="font-weight-bold shortDesc text-secondary">{{trip.shortDesc}}</h5>
+        </div>
+        <div>
+          <span class="font-weight-bold mr-2">Date: </span>
+          {{trip.startdate}}
+        </div>
+        <div>
+          <span class="font-weight-bold mr-2">Duration: </span>
+          {{trip.duration}}
+        </div>
+      </div>
+      <div class="w-25 row">
+        <div class="col-6 align-self-center">
+          <div class="text-center text-info">
+            {{trip.price}} €
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- total price -->
+    <hr>
+    <div class="d-flex mt-5 mb-5">
+      <div class="w-25">
+      </div>
+      <div class="w-75">
+      </div>
+      <div class="w-25">
+        <span class="font-weight-bold mr-2 text-success">{{totalPrice}}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #emptyResult>
+  <div class=" border m-5 container w-100 text-info d-flex justify-content-center">
+    <h1 class="p-5">No trip added to cart</h1>
+  </div>
+</ng-template>

@@ -1,0 +1,81 @@
+<div class="mt-5 container w-100">
+  <div class="row alert d-flex justify-content-center">
+    <div class="card divTripItem col-xs-12 col-md-6 col-lg-4 mr-5 mb-5 " *ngFor="let trip of travels; index as id">
+      <div class="divTripImg">
+        <img class="card-img-bottom tripImg" src="{{trip.img}}" alt="Card image cap">
+        <div class="tripDetail p-2 bg-light text-dark d-flex flex-column justify-content-between">
+          <div>
+            <div>
+              <h3 class="font-weight-bold mt-1 ml-1 mb-3">{{trip.destination}}</h3>
+            </div>
+            <div class="mb-3">
+              <span class="font-weight-bold shortDesc text-secondary ml-1">{{trip.shortDesc}}</span>
+            </div>
+            <div>
+              <span class="font-weight-bold ml-1 mr-2">Price: </span>
+              {{trip.price}} €
+            </div>
+            <div>
+              <span class="font-weight-bold ml-1 mr-2">Date: </span>
+              {{trip.startdate}}
+            </div>
+            <div>
+              <span class="font-weight-bold ml-1 mr-2">duration: </span>
+              {{trip.duration}}
+            </div>
+          </div>
+          <div>
+            <a [routerLink]="['/travel-detail', id]" class="text-dark float-right">more detail ..</a>
+            <br>
+            <a (click)="addToCart($event)" id="{{trip.id}}" class="addToCart text-dark float-right">Add
+              <img class="addCartLogo" src="/assets/img/addCartLogo.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ml-3 mb-5">
+    <div class="mb-5">
+     <h3 class="text-secondary shortDesc">Reviews</h3> 
+      
+    </div>
+    <div>
+      <div>
+        <p class="mt-2 text-info">Sepide Nik</p>
+        <p class="mt-4 text-secondary">My name is Sepide, I like their staff( Cynthia) she was great, responsive to my questions and inquiries. Also she made alternative suggestions based on my time. </p>
+        <hr>
+      </div>
+      <div>
+        <p class="mt-2 text-info">Farzaneh ir</p>
+        <p class="mt-4 text-secondary">Prompt, professional and polite service. Creative itinery that suited our travel plans.</p>
+        <hr>
+      </div>
+      <div *ngFor="let rev of review">
+        <p class="mt-2 text-info">{{rev.name}}</p>
+        <p class="mt-4 text-secondary">{{rev.desc}}</p>
+        <hr>
+      </div>
+    </div>
+    <div class="mb-3">
+      <a (click)="toggle()">
+        <img class="addPlusLogo" src="/assets/img/plusLogo.png" alt="">Add reviw</a>
+    </div>
+    <div class="">
+    <ng-container *ngIf="show">
+      <form [formGroup]="reviewForm" class="w-50">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="form-group">
+          <label for="desc">Write your experience</label>
+          <textarea class="form-control" formControlName="desc" rows="3"></textarea>
+        </div>
+        <div>
+           <button type="submit" (click)="sendExperience()" class="btn btn-primary mb-2">Send</button>
+        </div>
+      </form>
+    </ng-container>
+    </div>
+  </div>
+</div>
