@@ -1,5 +1,11 @@
 <div class="mt-5 container w-100">
   <div class="row alert d-flex justify-content-center">
+    <button type="button" (click)="filterTravels($event)" priceAtrr="500" class="btn btn-primary mr-2">Price Less than 500 €</button>
+    <button type="button" (click)="filterTravels($event)" priceAtrr="1000" class="btn btn-secondary mr-2">Price Less than 1000 €</button>
+    <button type="button" priceAtrr="all" (click)="filterTravels($event)" class="btn btn-success mr-2">All</button>
+  
+  </div>
+  <div class="row alert d-flex justify-content-center">
     <div class="card divTripItem col-xs-12 col-md-6 col-lg-4 mr-5 mb-5 " *ngFor="let trip of travels; index as id">
       <div class="divTripImg">
         <img class="card-img-bottom tripImg" src="{{trip.img}}" alt="Card image cap">

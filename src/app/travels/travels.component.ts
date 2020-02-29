@@ -80,7 +80,30 @@ export class TravelsComponent implements OnInit {
     // console.log(this.reviews);
 
   }
+  filterTravels(e){
+    const target = e.target || e.srcElement || e.currentTarget;
+   // window.alert(target);
+     const priceAtrr = target.attributes.priceAtrr;
+     // window.alert(idAttr.value);
+     if (priceAtrr.value == "500"){
+       this.travels = travelList.filter(obj => Number(obj.price) <= 500 ); 
 
+     }else if(priceAtrr.value == "1000"){
+       // this.travels = travelList.forEach(function (trip) {
+       //          if (Number(trip.price) >= 500) {
+
+       //             return;
+       //          } 
+       //      }); 
+       // var query = {address: "England", name: "Mark"};
+
+       this.travels = travelList.filter(obj => Number(obj.price) <= 1000 );         
+
+     }else if(priceAtrr.value == "all"){
+       this.travels = travelList;
+     }
+   
+  }
 
   ngOnInit(): void {
     //window.alert('load');

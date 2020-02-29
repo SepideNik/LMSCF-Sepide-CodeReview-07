@@ -55,7 +55,7 @@ export const travelList = [
    id: '6',
    img: '/assets/img/img07.jpg',
    destination: 'Nepal',
-   price: 450,
+   price: 1500,
    startdate: '20 Mar 2020',
    duration: '5 Days / 4 Nights',
    shortDesc: 'Fall in love with Nepal, prayer flags and spicy chai.',
