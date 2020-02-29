@@ -53,6 +53,7 @@ export class TravelsComponent implements OnInit {
         name:rev.name,
         desc: rev.desc}];
         this.reviewForm.reset();
+        this.show = !this.show;
         this.buttonName = "Hide";
 
     // var reviewArray: {[key: string]: string} = {
