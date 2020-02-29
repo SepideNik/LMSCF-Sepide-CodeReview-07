@@ -13,7 +13,7 @@ export class TravelDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private cartService: CartsService) { }
 	trip;
   addToCart() {
-   window.alert('Your product has been added to the cart!');
+   
    this.cartService.addToCart(this.trip);
   }
 
