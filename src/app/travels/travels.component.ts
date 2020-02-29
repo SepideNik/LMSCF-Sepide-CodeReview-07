@@ -32,7 +32,7 @@ export class TravelsComponent implements OnInit {
   	this.route.paramMap.subscribe(params => {
     this.trip = travelList[Number(id)-1];
      });
-   window.alert("This trip added successfuly");
+   // window.alert("This trip added successfuly");
    this.cartService.addToCart(this.trip);
   }
 
